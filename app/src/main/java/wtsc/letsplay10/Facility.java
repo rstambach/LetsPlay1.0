@@ -1,5 +1,7 @@
 package wtsc.letsplay10;
 
+// @author Alexander Samuel
+
 public class Facility
 {
    String name, address1, address2, city, state, notes;

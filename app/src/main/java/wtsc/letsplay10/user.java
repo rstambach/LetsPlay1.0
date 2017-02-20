@@ -23,7 +23,7 @@ public class User {
         setID(user.getID());
         setFirstName(user.getFirstName());
         setLastName(user.getLastName());
-        setGamename(user.getGameName());
+        setGameName(user.getGameName());
         setPassword(user.getPassword());
         setEmail(user.getEmail());
     }   // constructs new user from another User object
@@ -34,7 +34,7 @@ public class User {
         setID(id);
         setFirstName(fName);
         setLastName(lName);
-        setGamename(gameName);
+        setGameName(gameName);
         setPassword(password);
         setEmail(email);
     }
@@ -61,7 +61,7 @@ public class User {
         this.lName = lName;
     }
 
-    public void setGamename(String gameName)
+    public void setGameName(String gameName)
     {
         this.gameName = gameName;
     }

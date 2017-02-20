@@ -11,4 +11,6 @@ package wtsc.letsplay10;
 
 public interface OnUserDataLoaded {
     void onCurrentUserDataLoaded(User user);
+    void onUserVerify(User user);
+    void onNewUserAdded(User user);
 }
