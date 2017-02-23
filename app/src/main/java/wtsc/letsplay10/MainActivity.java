@@ -6,7 +6,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnUserDataLoaded, OnSportsDataLoaded {
+public class MainActivity extends AppCompatActivity implements
+        OnUserDataLoaded,
+        OnSportsDataLoaded,
+        OnScheduleDataLoaded {
 
     // instance of the GetCurrentUser utility functions to get the user data from the database
     static GetCurrentUser getUser;
@@ -19,15 +22,20 @@ public class MainActivity extends AppCompatActivity implements OnUserDataLoaded,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        currentUser = new User();       // initiate currentUser object
-        getUser = new GetCurrentUser(MainActivity.this);   // initiate GetCurrentUser object
+     //   currentUser = new User();       // initiate currentUser object
+     //   getUser = new GetCurrentUser(MainActivity.this);   // initiate GetCurrentUser object
         // executes AsyncTask in the getUser object - Pass the email address of user to load
       //  getUser.execute("rstambach@my.waketech.edu","LOAD");
 
-        getUser.execute("VERIFY","rstambach1@my.waketech.edu");
+     //   getUser.execute("VERIFY","rstambach1@my.waketech.edu");
 
        // getSportsList = new GetSportsList(MainActivity.this);
        // getSportsList.execute();
+
+
+
+        GetSchedules gs = new GetSchedules(MainActivity.this);
+        gs.execute("test","Test");
 
     }
 
@@ -78,5 +86,10 @@ public class MainActivity extends AppCompatActivity implements OnUserDataLoaded,
     @Override
     public void onSportsDataLoaded(List<Sport> sports) {
         int i = sports.size();
+    }
+
+    @Override
+    public void onScheduleDataLoaded(List<Schedule> schedules) {
+        int i = schedules.size();
     }
 }
